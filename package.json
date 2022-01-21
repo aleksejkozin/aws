@@ -1,0 +1,14 @@
+{
+  "name": "youneed2.click",
+  "version": "1.0.0",
+  "repository": "https://github.com/aleksejkozin/aws.git",
+  "author": "Aleksey Kozin <aleksey.kozin@zoftify.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
