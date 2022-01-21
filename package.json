@@ -6,7 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "echo test",
+    "build": "echo build"
   },
   "dependencies": {
     "express": "^4.17.2"
