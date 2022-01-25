@@ -1,0 +1,12 @@
+local.settings.json
+.pytest_cache
+data_samples
+project.egg-info
+scraping.egg-info
+.ipynb_checkpoints
+node_modules
+dist
+.venv
+venv
+/src/infra/
+global_environment.json

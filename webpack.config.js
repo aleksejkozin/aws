@@ -13,6 +13,7 @@ https://www.youtube.com/watch?v=X1nxTjVDYdQ
 
 const path = require('path')
 const WebpackShellPluginNext = require('webpack-shell-plugin-next')
+const NodeExternals = require('webpack-node-externals')
 const {merge} = require('webpack-merge')
 
 const base = {
@@ -53,19 +54,20 @@ const base = {
 
 const backend = merge(base, {
   target: 'node',
-  entry: path.resolve(__dirname, './src/index.ts'),
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
   },
   externalsPresets: {node: true},
+  externals: [NodeExternals()],
   plugins: [
     new WebpackShellPluginNext({
       // This will execute in dev mode
       onWatchRun: {
         scripts: [
           'cross-env NODE_ENV=development nodemon --watch ./dist/backend/ ./dist/backend/bundle.js',
-          'tsc --watch'
+          'tsc --watch',
         ],
         blocking: false,
         parallel: true,
