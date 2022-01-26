@@ -8,4 +8,5 @@ FROM builder as runner
 WORKDIR /app
 COPY . .
 RUN yarn build && yarn test
+EXPOSE 3000
 CMD yarn start
